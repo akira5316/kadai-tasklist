@@ -1,0 +1,22 @@
+<div class="row">
+  <aside class="col-xs-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= @user.name %></h3>
+      </div>
+      <div class="panel-body">
+        <img class="media-object img-rounded img-responsive" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">
+      </div>
+    </div>
+  </aside>
+  <div class="col-xs-8">
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        完了したタスク数： 
+        <span class="badge badge-pill badge-primary">14</span></li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        未完了のタスク数： 
+        <span class="badge badge-pill badge-danger">15</span></li>
+    </ul>
+  </div>
+</div>
