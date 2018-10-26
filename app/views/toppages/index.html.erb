@@ -1,10 +1,13 @@
 <% if logged_in? %>
-  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+  <h1><%= current_user.name %>さんのタスク一覧</h1>
+  <%= render 'tasks/tasks', tasks: @tasks %>
+  <%= link_to 'タスクの追加', new_task_path, class: 'btn btn-primary' %>
+  
 <% else %>
-  <div class="center jumbotron">
-    <div class="text-center">
-      <h1>Welcome to the Tasklist</h1>
-      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+    <div class="center jumbotron">
+      <div class="text-center">
+        <h1>Welcome to the Tasklist</h1>
+        <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+      </div>
     </div>
-  </div>
 <% end %>

@@ -1,0 +1,24 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>タスク名</th>
+      <th>ステータス</th>
+    </tr>
+  </thead>
+  <% tasks.each do |task| %>
+  <tbody>
+      <tr>
+        <td><%= link_to task.content, task %></td>
+        <% if task.status == "完了" %>
+          <td><span class="label label-default"><%= task.status %></span></td>
+        <% else %>
+          <td><span class="label label-danger"><%= task.status %></span></td>
+        <% end %>
+      </tr>
+  </tbody>
+  <% end %>
+</table>
+<div>
+ <%= paginate tasks %> 
+</div>
+  
